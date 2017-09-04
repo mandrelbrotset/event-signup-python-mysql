@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Review membership</title>
+</head>
+<body>
+  <h1>Review membership for {{ user_data[0] }} {{ user_data[1] }}</h1>
+
+  <h3>Change name</h3>
+  <form action="{{ url_for('change_name')  }}" method="POST">
+      <input type="hidden" name="email" value="{{ user_data[2] }}">
+      <p>
+          Change first name from {{ user_data[0] }} to
+          <input name="firstName" value="{{ user_data[0] }}">
+      </p>
+      <br>
+      <p>
+          Change first name from {{ user_data[1] }} to
+         <input name="lastName" value="{{ user_data[1] }}">
+      </p>
+      <br>
+      <input type="submit" value="Save changes">
+  </form>
+
+  <h3>Edit activity</h3>
+  <p>Your current activity is set to <strong>{{ user_data[3] }}</strong></p>
+  <form action="{{ url_for('edit_activity') }}" method="POST">
+      <p>Pick activity</p>
+      <input type="hidden" name="email" value="{{ user_data[2] }}">
+      <select name="event">
+          <option value="football" {% if user_data[3] == "football" %}{{ "disabled" }}{% endif %}>Football</option>
+          <option value="soccer" {% if user_data[3] == "soccer" %}{{ "disabled" }}{% endif %}>Soccer</option>
+          <option value="baseball" {% if user_data[3] == "baseball" %}{{ "disabled" }}{% endif %}>Base ball</option>
+          <option value="tennis" {% if user_data[3] == "tennis" %}{{ "disabled" }}{% endif %}>Tennis</option>
+      </select>
+      <input type="submit" value="Save changes">
+  </form>
+
+  <h3>Remove Account</h3>
+  <p>Are you sure you want remove your membership</p>
+  <form action="{{ url_for('remove_member') }}" method="POST">
+      <input type="hidden" name="remove_who" value="{{ user_data[2] }}">
+      <input type="submit" value="Yes, I'm sure">
+  </form>
+  <br><br>
+
+  <a href="/">Home</a>
+  <a href="members">See Members</a>
+</body>
+</html>

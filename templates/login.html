@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <form action="{{ url_for('membership') }}" method="POST">
+    <h1>Login</h1>
+    <h2>Email</h2><input type="text" name="email">
+    <br>
+    <h2>Password</h2><input type="password" name="password">
+    <input type="submit">
+  </form>
+  <br><br>
+  <a href="/">Home</a>
+  <a href="members">See Members</a>
+</body>
+</html>

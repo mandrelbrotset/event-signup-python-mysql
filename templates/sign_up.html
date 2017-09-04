@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <form action="{{ url_for('sign_up') }}" method="POST">
+    <p>I</p>
+    <input type="text" name="f_name" placeholder="First name">
+    <input type="text" name="l_name" placeholder="Last name">
+    <p>want to join the</p>
+    <select name="event">
+      <option value="football">Football</option>
+      <option value="soccer">Soccer</option>
+      <option value="baseball">Base ball</option>
+      <option value="tennis">Tennis</option>
+    </select>
+    <p>team.</p>
+    <p>My email is <input type="text" name="email" placeholder="Johndoe@gmail.com"></p>
+    <p>I also choose <input type="password" name="password"> as password to review changes to my account</p>
+    <br>
+    <input type="submit">
+  </form>
+  <br><br>
+  <a href="/">Home</a>
+  <a href="members">See Members</a>
+</body>
+</html>

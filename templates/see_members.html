@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>See members</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Event</th>
+    </tr>
+    {% for member in members %}
+      <tr>
+        <td>{{member[0]}}</td>
+        <td>{{member[1]}}</td>
+        <td>{{member[2]}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  <a href="/">Home</a>
+</body>
+</html>
