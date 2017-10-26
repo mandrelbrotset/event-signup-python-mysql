@@ -26,7 +26,6 @@ def sign_up():
             return render_template(SIGN_UP)
         else:
             db.add(firstname, lastname, email, activity, password)
-        print(firstname, lastname, activity, email, password)   # for debug
     return render_template(SIGN_UP)
 
 @app.route('/members')
